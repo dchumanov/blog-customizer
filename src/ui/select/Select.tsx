@@ -32,6 +32,7 @@ export const Select = (props: SelectProps) => {
 		rootRef,
 		onClose,
 		onChange: setIsOpen,
+		eventName: 'mousedown',
 	});
 
 	useEnterSubmit({
@@ -90,7 +91,9 @@ export const Select = (props: SelectProps) => {
 								<Option
 									key={option.value}
 									option={option}
-									onClick={() => handleOptionClick(option)}
+									onClick={() => {
+										handleOptionClick(option);
+									}}
 								/>
 							))}
 					</ul>
